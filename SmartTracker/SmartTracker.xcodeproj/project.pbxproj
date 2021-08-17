@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		122C47B426CBB27B00E2967C /* SmartTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C47B326CBB27B00E2967C /* SmartTrackerApp.swift */; };
+		122C47B626CBB27B00E2967C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C47B526CBB27B00E2967C /* ContentView.swift */; };
+		122C47B826CBB27B00E2967C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122C47B726CBB27B00E2967C /* Assets.xcassets */; };
+		122C47BB26CBB27B00E2967C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122C47BA26CBB27B00E2967C /* Preview Assets.xcassets */; };
+		122C47BD26CBB27B00E2967C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C47BC26CBB27B00E2967C /* Persistence.swift */; };
+		122C47C026CBB27B00E2967C /* SmartTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 122C47BE26CBB27B00E2967C /* SmartTracker.xcdatamodeld */; };
+		122C47CA26CBB27C00E2967C /* SmartTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C47C926CBB27C00E2967C /* SmartTrackerTests.swift */; };
+		122C47D426CBB27C00E2967C /* SmartTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C47D326CBB27C00E2967C /* SmartTrackerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		122C47C626CBB27C00E2967C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 122C47A826CBB27A00E2967C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 122C47AF26CBB27B00E2967C;
+			remoteInfo = SmartTracker;
+		};
+		122C47D026CBB27C00E2967C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 122C47A826CBB27A00E2967C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 122C47AF26CBB27B00E2967C;
+			remoteInfo = SmartTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		122C47B026CBB27B00E2967C /* SmartTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		122C47B326CBB27B00E2967C /* SmartTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTrackerApp.swift; sourceTree = "<group>"; };
+		122C47B526CBB27B00E2967C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		122C47B726CBB27B00E2967C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		122C47BA26CBB27B00E2967C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		122C47BC26CBB27B00E2967C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		122C47BF26CBB27B00E2967C /* SmartTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartTracker.xcdatamodel; sourceTree = "<group>"; };
+		122C47C526CBB27C00E2967C /* SmartTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		122C47C926CBB27C00E2967C /* SmartTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTrackerTests.swift; sourceTree = "<group>"; };
+		122C47CF26CBB27C00E2967C /* SmartTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		122C47D326CBB27C00E2967C /* SmartTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTrackerUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		122C47AD26CBB27B00E2967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47C226CBB27C00E2967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47CC26CBB27C00E2967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122C47A726CBB27A00E2967C = {
+			isa = PBXGroup;
+			children = (
+				122C47B226CBB27B00E2967C /* SmartTracker */,
+				122C47C826CBB27C00E2967C /* SmartTrackerTests */,
+				122C47D226CBB27C00E2967C /* SmartTrackerUITests */,
+				122C47B126CBB27B00E2967C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		122C47B126CBB27B00E2967C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				122C47B026CBB27B00E2967C /* SmartTracker.app */,
+				122C47C526CBB27C00E2967C /* SmartTrackerTests.xctest */,
+				122C47CF26CBB27C00E2967C /* SmartTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		122C47B226CBB27B00E2967C /* SmartTracker */ = {
+			isa = PBXGroup;
+			children = (
+				122C47B326CBB27B00E2967C /* SmartTrackerApp.swift */,
+				122C47B526CBB27B00E2967C /* ContentView.swift */,
+				122C47B726CBB27B00E2967C /* Assets.xcassets */,
+				122C47BC26CBB27B00E2967C /* Persistence.swift */,
+				122C47BE26CBB27B00E2967C /* SmartTracker.xcdatamodeld */,
+				122C47B926CBB27B00E2967C /* Preview Content */,
+			);
+			path = SmartTracker;
+			sourceTree = "<group>";
+		};
+		122C47B926CBB27B00E2967C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				122C47BA26CBB27B00E2967C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		122C47C826CBB27C00E2967C /* SmartTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				122C47C926CBB27C00E2967C /* SmartTrackerTests.swift */,
+			);
+			path = SmartTrackerTests;
+			sourceTree = "<group>";
+		};
+		122C47D226CBB27C00E2967C /* SmartTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				122C47D326CBB27C00E2967C /* SmartTrackerUITests.swift */,
+			);
+			path = SmartTrackerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		122C47AF26CBB27B00E2967C /* SmartTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 122C47D726CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTracker" */;
+			buildPhases = (
+				122C47AC26CBB27B00E2967C /* Sources */,
+				122C47AD26CBB27B00E2967C /* Frameworks */,
+				122C47AE26CBB27B00E2967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartTracker;
+			productName = SmartTracker;
+			productReference = 122C47B026CBB27B00E2967C /* SmartTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		122C47C426CBB27C00E2967C /* SmartTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 122C47DA26CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTrackerTests" */;
+			buildPhases = (
+				122C47C126CBB27C00E2967C /* Sources */,
+				122C47C226CBB27C00E2967C /* Frameworks */,
+				122C47C326CBB27C00E2967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				122C47C726CBB27C00E2967C /* PBXTargetDependency */,
+			);
+			name = SmartTrackerTests;
+			productName = SmartTrackerTests;
+			productReference = 122C47C526CBB27C00E2967C /* SmartTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		122C47CE26CBB27C00E2967C /* SmartTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 122C47DD26CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTrackerUITests" */;
+			buildPhases = (
+				122C47CB26CBB27C00E2967C /* Sources */,
+				122C47CC26CBB27C00E2967C /* Frameworks */,
+				122C47CD26CBB27C00E2967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				122C47D126CBB27C00E2967C /* PBXTargetDependency */,
+			);
+			name = SmartTrackerUITests;
+			productName = SmartTrackerUITests;
+			productReference = 122C47CF26CBB27C00E2967C /* SmartTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		122C47A826CBB27A00E2967C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					122C47AF26CBB27B00E2967C = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					122C47C426CBB27C00E2967C = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 122C47AF26CBB27B00E2967C;
+					};
+					122C47CE26CBB27C00E2967C = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 122C47AF26CBB27B00E2967C;
+					};
+				};
+			};
+			buildConfigurationList = 122C47AB26CBB27B00E2967C /* Build configuration list for PBXProject "SmartTracker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 122C47A726CBB27A00E2967C;
+			productRefGroup = 122C47B126CBB27B00E2967C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				122C47AF26CBB27B00E2967C /* SmartTracker */,
+				122C47C426CBB27C00E2967C /* SmartTrackerTests */,
+				122C47CE26CBB27C00E2967C /* SmartTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		122C47AE26CBB27B00E2967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				122C47BB26CBB27B00E2967C /* Preview Assets.xcassets in Resources */,
+				122C47B826CBB27B00E2967C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47C326CBB27C00E2967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47CD26CBB27C00E2967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		122C47AC26CBB27B00E2967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				122C47C026CBB27B00E2967C /* SmartTracker.xcdatamodeld in Sources */,
+				122C47BD26CBB27B00E2967C /* Persistence.swift in Sources */,
+				122C47B626CBB27B00E2967C /* ContentView.swift in Sources */,
+				122C47B426CBB27B00E2967C /* SmartTrackerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47C126CBB27C00E2967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				122C47CA26CBB27C00E2967C /* SmartTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		122C47CB26CBB27C00E2967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				122C47D426CBB27C00E2967C /* SmartTrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		122C47C726CBB27C00E2967C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 122C47AF26CBB27B00E2967C /* SmartTracker */;
+			targetProxy = 122C47C626CBB27C00E2967C /* PBXContainerItemProxy */;
+		};
+		122C47D126CBB27C00E2967C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 122C47AF26CBB27B00E2967C /* SmartTracker */;
+			targetProxy = 122C47D026CBB27C00E2967C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		122C47D526CBB27C00E2967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		122C47D626CBB27C00E2967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		122C47D826CBB27C00E2967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SmartTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		122C47D926CBB27C00E2967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SmartTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		122C47DB26CBB27C00E2967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartTracker.app/SmartTracker";
+			};
+			name = Debug;
+		};
+		122C47DC26CBB27C00E2967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartTracker.app/SmartTracker";
+			};
+			name = Release;
+		};
+		122C47DE26CBB27C00E2967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartTracker;
+			};
+			name = Debug;
+		};
+		122C47DF26CBB27C00E2967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.test.SmartTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartTracker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		122C47AB26CBB27B00E2967C /* Build configuration list for PBXProject "SmartTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				122C47D526CBB27C00E2967C /* Debug */,
+				122C47D626CBB27C00E2967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		122C47D726CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				122C47D826CBB27C00E2967C /* Debug */,
+				122C47D926CBB27C00E2967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		122C47DA26CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				122C47DB26CBB27C00E2967C /* Debug */,
+				122C47DC26CBB27C00E2967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		122C47DD26CBB27C00E2967C /* Build configuration list for PBXNativeTarget "SmartTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				122C47DE26CBB27C00E2967C /* Debug */,
+				122C47DF26CBB27C00E2967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		122C47BE26CBB27B00E2967C /* SmartTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				122C47BF26CBB27B00E2967C /* SmartTracker.xcdatamodel */,
+			);
+			currentVersion = 122C47BF26CBB27B00E2967C /* SmartTracker.xcdatamodel */;
+			path = SmartTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 122C47A826CBB27A00E2967C /* Project object */;
+}
