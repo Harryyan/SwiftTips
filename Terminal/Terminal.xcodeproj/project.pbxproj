@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B85B526C65FA600F6D8F2 /* BufferAsync.swift */; };
-		126250E226CA74D400A59B5F /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126250E126CA74D400A59B5F /* CurrencyResponse.swift */; };
 		12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102C826C706E7000106F5 /* CoreDataStack.swift */; };
-		12B102CB26C70806000106F5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102CA26C70806000106F5 /* Category.swift */; };
-		12B102CF26C70A2E000106F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102CE26C70A2E000106F5 /* Utils.swift */; };
 		12B35BD426C3930000495EE3 /* myMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BD326C3930000495EE3 /* myMain.swift */; };
 		12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BDA26C394BE00495EE3 /* HashCache.swift */; };
 /* End PBXBuildFile section */
@@ -30,10 +27,7 @@
 
 /* Begin PBXFileReference section */
 		122B85B526C65FA600F6D8F2 /* BufferAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferAsync.swift; sourceTree = "<group>"; };
-		126250E126CA74D400A59B5F /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
 		12B102C826C706E7000106F5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		12B102CA26C70806000106F5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		12B102CE26C70A2E000106F5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		12B35BD026C3930000495EE3 /* Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Terminal; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B35BD326C3930000495EE3 /* myMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMain.swift; sourceTree = "<group>"; };
 		12B35BDA26C394BE00495EE3 /* HashCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashCache.swift; sourceTree = "<group>"; };
@@ -73,9 +67,6 @@
 				12B35BDA26C394BE00495EE3 /* HashCache.swift */,
 				122B85B526C65FA600F6D8F2 /* BufferAsync.swift */,
 				12B102C826C706E7000106F5 /* CoreDataStack.swift */,
-				12B102CA26C70806000106F5 /* Category.swift */,
-				12B102CE26C70A2E000106F5 /* Utils.swift */,
-				126250E126CA74D400A59B5F /* CurrencyResponse.swift */,
 			);
 			path = Terminal;
 			sourceTree = "<group>";
@@ -138,13 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				126250E226CA74D400A59B5F /* CurrencyResponse.swift in Sources */,
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
 				122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */,
 				12B35BD426C3930000495EE3 /* myMain.swift in Sources */,
-				12B102CB26C70806000106F5 /* Category.swift in Sources */,
-				12B102CF26C70A2E000106F5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
