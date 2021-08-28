@@ -7,25 +7,10 @@
 
 import Foundation
 
-func fetchAndDecode<T: Decodable>(url: URL) async throws -> T {
-    let (data, _) = try await URLSession.shared.data(from: url)
-    let decodedData = try JSONDecoder().decode(T.self, from: data)
-    
-    return decodedData
-}
-
-func fetchCurrency<T: Decodable>(url: URL) async throws -> T {
-    let task = Task { () -> T in
-        try await fetchAndDecode(url: url)
-    }
-    
-    return try await task.value
-}
-
-
 @main
 struct Main {
     static func main() async throws {
+        
         //        let cache = HashCache()
         //        await cache.compute()
         //
