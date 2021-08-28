@@ -30,8 +30,14 @@ struct AnimatedState<Value> : DynamicProperty {
         }
     }
 
+    // using $ sign to call it, like $animation
     public var projectedValue: Binding<Value> {
-        _value.projectedValue
+        Binding(
+            get: { wrappedValue },
+            set: { wrappedValue = $0 }
+        )
+        
+        // _value.projectedValue
     }
 
     private func process(_ value: Value) {
