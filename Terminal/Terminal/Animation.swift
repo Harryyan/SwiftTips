@@ -17,6 +17,7 @@ struct AnimatedState<Value> : DynamicProperty {
         value: Value,
         animation: Animation? = nil
     ) {
+        // InitValue won't trigger get set of wrapped value
         _value = State<Value>(initialValue: value)
         self.animation = animation
     }

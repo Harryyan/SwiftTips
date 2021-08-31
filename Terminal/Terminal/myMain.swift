@@ -10,9 +10,8 @@ import Foundation
 @main
 struct Main {
     static func main() async throws {
-        
         //        let cache = HashCache()
-        //        await cache.compute()
+        //        await cache.compute()`
         //
         let buffer = Buffer()
         
