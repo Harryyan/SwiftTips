@@ -13,6 +13,7 @@
 		12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102C826C706E7000106F5 /* CoreDataStack.swift */; };
 		12B35BD426C3930000495EE3 /* myMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BD326C3930000495EE3 /* myMain.swift */; };
 		12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BDA26C394BE00495EE3 /* HashCache.swift */; };
+		12F2812526E5DEF9002FD1AC /* future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2812426E5DEF9002FD1AC /* future.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		12B35BD026C3930000495EE3 /* Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Terminal; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B35BD326C3930000495EE3 /* myMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMain.swift; sourceTree = "<group>"; };
 		12B35BDA26C394BE00495EE3 /* HashCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashCache.swift; sourceTree = "<group>"; };
+		12F2812426E5DEF9002FD1AC /* future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = future.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				12B102C826C706E7000106F5 /* CoreDataStack.swift */,
 				122E193726DA2EB30022EEE3 /* Animation.swift */,
 				122E193926DA2EBE0022EEE3 /* AnimationUI.swift */,
+				12F2812426E5DEF9002FD1AC /* future.swift */,
 			);
 			path = Terminal;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
+				12F2812526E5DEF9002FD1AC /* future.swift in Sources */,
 				122E193A26DA2EBE0022EEE3 /* AnimationUI.swift in Sources */,
 				122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */,
 				122E193826DA2EB30022EEE3 /* Animation.swift in Sources */,
