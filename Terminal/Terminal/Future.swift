@@ -50,11 +50,3 @@ func test() {
         print("sub2: \(value)")
     }) //  the Future executes again because it received another subscriber
 }
-
-
-@main
-struct Main2 {
-    static func main()  {
-        print("dsf")
-    }
-}
