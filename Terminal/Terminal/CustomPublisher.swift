@@ -63,17 +63,16 @@ where Target.Input == Void {
         // Whenever an event was triggered by the underlying
         // UIControl instance, we'll simply pass Void to our
         // target to emit that event:
-        target?.receive(())
+        _ = target?.receive()
     }
 }
-
 
 /// Request usage in Subscription
 struct Feed<Output>: Publisher {
     typealias Failure = Never
-
+    
     var provider: () -> Output?
-
+    
     func receive<S: Subscriber>(
         subscriber: S
     ) where S.Input == Output, S.Failure == Never {
@@ -82,20 +81,23 @@ struct Feed<Output>: Publisher {
     }
 }
 
-class Subscription<Target: Subscriber>: Combine.Subscription
-        where Target.Input == Output {
 
+extension Feed {
+
+    class Subscription<Target: Subscriber>: Combine.Subscription
+    where Target.Input == Output {
+        
         private let feed: Feed
         private var target: Target?
-
+        
         init(feed: Feed, target: Target) {
             self.feed = feed
             self.target = target
         }
-
+        
         func request(_ demand: Subscribers.Demand) {
             var demand = demand
-
+            
             // We'll continue to emit new values as long as there's
             // demand, or until our provider closure returns nil
             // (at which point we'll send a completion event):
@@ -109,8 +111,9 @@ class Subscription<Target: Subscriber>: Combine.Subscription
                 }
             }
         }
-
+        
         func cancel() {
             target = nil
         }
     }
+}

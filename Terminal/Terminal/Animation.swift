@@ -10,7 +10,6 @@ import SwiftUI
 @propertyWrapper
 struct AnimatedState<Value> : DynamicProperty {
     @State private var value: Value
-    
     let animation: Animation?
 
     init(

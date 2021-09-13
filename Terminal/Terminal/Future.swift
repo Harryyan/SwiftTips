@@ -42,11 +42,11 @@ func test() {
     let future = createFuture()
     
     // add subscriber
-    let sub1 = future.sink(receiveValue: { value in
+    let _ = future.sink(receiveValue: { value in
         print("sub1: \(value)")
     }) // the Future executes because it has a subscriber
     
-    let sub2 = future.sink(receiveValue: { value in
+    let _ = future.sink(receiveValue: { value in
         print("sub2: \(value)")
     }) //  the Future executes again because it received another subscriber
 }

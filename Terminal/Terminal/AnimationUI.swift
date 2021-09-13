@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct AnimationUI: View {
+    @AnimatedState(
+        value: false,
+        animation: .spring()
+    ) var scaleSquare
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
