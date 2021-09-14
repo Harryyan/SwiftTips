@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12090AEF26F0A31500AA9591 /* AbstractFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12090AEE26F0A31500AA9591 /* AbstractFactory.swift */; };
 		122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B85B526C65FA600F6D8F2 /* BufferAsync.swift */; };
 		122E193826DA2EB30022EEE3 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193726DA2EB30022EEE3 /* Animation.swift */; };
 		122E193A26DA2EBE0022EEE3 /* AnimationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193926DA2EBE0022EEE3 /* AnimationUI.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12090AEE26F0A31500AA9591 /* AbstractFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactory.swift; sourceTree = "<group>"; };
 		122B85B526C65FA600F6D8F2 /* BufferAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferAsync.swift; sourceTree = "<group>"; };
 		122E193726DA2EB30022EEE3 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		122E193926DA2EBE0022EEE3 /* AnimationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUI.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12090AED26F0A2EE00AA9591 /* AbstractFactory */ = {
+			isa = PBXGroup;
+			children = (
+				12090AEE26F0A31500AA9591 /* AbstractFactory.swift */,
+			);
+			path = AbstractFactory;
+			sourceTree = "<group>";
+		};
 		12B35BC726C3930000495EE3 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 		12B35BD226C3930000495EE3 /* Terminal */ = {
 			isa = PBXGroup;
 			children = (
+				12090AED26F0A2EE00AA9591 /* AbstractFactory */,
 				12B35BD326C3930000495EE3 /* myMain.swift */,
 				12B35BDA26C394BE00495EE3 /* HashCache.swift */,
 				122B85B526C65FA600F6D8F2 /* BufferAsync.swift */,
@@ -141,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12090AEF26F0A31500AA9591 /* AbstractFactory.swift in Sources */,
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
 				12F2812726E6B3BA002FD1AC /* CustomPublisher.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
