@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-@main
+// @main
 struct Main {
     static func main() async throws {
         let buffer = Buffer()
