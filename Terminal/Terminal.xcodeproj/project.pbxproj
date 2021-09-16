@@ -10,13 +10,13 @@
 		122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B85B526C65FA600F6D8F2 /* BufferAsync.swift */; };
 		122E193826DA2EB30022EEE3 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193726DA2EB30022EEE3 /* Animation.swift */; };
 		122E193A26DA2EBE0022EEE3 /* AnimationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193926DA2EBE0022EEE3 /* AnimationUI.swift */; };
-		123EB84826F2D68200FD5DFA /* CustomSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB84726F2D68200FD5DFA /* CustomSubscriber.swift */; };
-		123EB84A26F2E18600FD5DFA /* CombineMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB84926F2E18600FD5DFA /* CombineMain.swift */; };
+		123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */; };
+		123EB85426F2E94F00FD5DFA /* StringSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */; };
+		123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85226F2E94F00FD5DFA /* CombineMain.swift */; };
 		12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102C826C706E7000106F5 /* CoreDataStack.swift */; };
 		12B35BD426C3930000495EE3 /* myMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BD326C3930000495EE3 /* myMain.swift */; };
 		12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BDA26C394BE00495EE3 /* HashCache.swift */; };
 		12F2812526E5DEF9002FD1AC /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2812426E5DEF9002FD1AC /* Future.swift */; };
-		12F2812726E6B3BA002FD1AC /* CustomPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2812626E6B3BA002FD1AC /* CustomPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,14 +40,14 @@
 		122B85B526C65FA600F6D8F2 /* BufferAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferAsync.swift; sourceTree = "<group>"; };
 		122E193726DA2EB30022EEE3 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		122E193926DA2EBE0022EEE3 /* AnimationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUI.swift; sourceTree = "<group>"; };
-		123EB84726F2D68200FD5DFA /* CustomSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubscriber.swift; sourceTree = "<group>"; };
-		123EB84926F2E18600FD5DFA /* CombineMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineMain.swift; sourceTree = "<group>"; };
+		123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPublisher.swift; sourceTree = "<group>"; };
+		123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSubscriber.swift; sourceTree = "<group>"; };
+		123EB85226F2E94F00FD5DFA /* CombineMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMain.swift; sourceTree = "<group>"; };
 		12B102C826C706E7000106F5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		12B35BD026C3930000495EE3 /* Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Terminal; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B35BD326C3930000495EE3 /* myMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMain.swift; sourceTree = "<group>"; };
 		12B35BDA26C394BE00495EE3 /* HashCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashCache.swift; sourceTree = "<group>"; };
 		12F2812426E5DEF9002FD1AC /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		12F2812626E6B3BA002FD1AC /* CustomPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,7 @@
 		12B35BC726C3930000495EE3 = {
 			isa = PBXGroup;
 			children = (
+				12090AFA26F14A6500AA9591 /* Patterns */,
 				12B35BD226C3930000495EE3 /* Terminal */,
 				12B35BD126C3930000495EE3 /* Products */,
 			);
@@ -124,7 +125,9 @@
 		12B35BD226C3930000495EE3 /* Terminal */ = {
 			isa = PBXGroup;
 			children = (
-				12090AFA26F14A6500AA9591 /* Patterns */,
+				123EB85226F2E94F00FD5DFA /* CombineMain.swift */,
+				123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */,
+				123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */,
 				12B35BD326C3930000495EE3 /* myMain.swift */,
 				12B35BDA26C394BE00495EE3 /* HashCache.swift */,
 				122B85B526C65FA600F6D8F2 /* BufferAsync.swift */,
@@ -132,9 +135,6 @@
 				122E193726DA2EB30022EEE3 /* Animation.swift */,
 				122E193926DA2EBE0022EEE3 /* AnimationUI.swift */,
 				12F2812426E5DEF9002FD1AC /* Future.swift */,
-				12F2812626E6B3BA002FD1AC /* CustomPublisher.swift */,
-				123EB84726F2D68200FD5DFA /* CustomSubscriber.swift */,
-				123EB84926F2E18600FD5DFA /* CombineMain.swift */,
 			);
 			path = Terminal;
 			sourceTree = "<group>";
@@ -197,16 +197,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				123EB84A26F2E18600FD5DFA /* CombineMain.swift in Sources */,
+				123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */,
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
-				12F2812726E6B3BA002FD1AC /* CustomPublisher.swift in Sources */,
+				123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
 				12F2812526E5DEF9002FD1AC /* Future.swift in Sources */,
 				122E193A26DA2EBE0022EEE3 /* AnimationUI.swift in Sources */,
 				122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */,
 				122E193826DA2EB30022EEE3 /* Animation.swift in Sources */,
 				12B35BD426C3930000495EE3 /* myMain.swift in Sources */,
-				123EB84826F2D68200FD5DFA /* CustomSubscriber.swift in Sources */,
+				123EB85426F2E94F00FD5DFA /* StringSubscriber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

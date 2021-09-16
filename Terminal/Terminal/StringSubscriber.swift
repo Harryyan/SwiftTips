@@ -18,7 +18,7 @@ class StringSubscriber: Subscriber {
     
     func receive(subscription: Subscription) {
         print("Received Subscription!")
-        subscription.request(.unlimited)           // backpressure
+        subscription.request(.max(3))           // backpressure
     }
     
     func receive(_ input: String) -> Subscribers.Demand {
@@ -33,4 +33,31 @@ class StringSubscriber: Subscriber {
     
     typealias Input = String
     typealias Failure = Never
+}
+
+
+/// Subject
+
+enum MyError: Error {
+    case subscribeError
+}
+
+class StringSubscriber2: Subscriber {
+    
+    func receive(subscription: Subscription) {
+        subscription.request(.max(2))
+    }
+    
+    func receive(_ input: String) -> Subscribers.Demand {
+        print(input)
+        
+        return .none
+    }
+    
+    func receive(completion: Subscribers.Completion<MyError>) {
+        print("Received Completion!")
+    }
+
+    typealias Input = String
+    typealias Failure = MyError
 }
