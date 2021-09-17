@@ -27,18 +27,7 @@ struct CombineMain {
         subject.send("test")
         subject.send("test2")
         
-        // School Test
-        let citySchool = School(name: "City School", students: 100)
-        let school = CurrentValueSubject<School, Never>(citySchool)
-        
-        let cancellable = school.sink {
-            print($0)
-        }
-        
-        let townSchool = School(name: "Town School", students: 23)
-        school.value = townSchool
-
-        
-        
+        // Operator tests
+        flatMapTest()
     }
 }

@@ -16,3 +16,23 @@ struct School {
         self.students = CurrentValueSubject(students)
     }
 }
+
+/// Test flat map operator
+func flatMapTest() {
+    let citySchool = School(name: "City School", students: 100)
+    let school = CurrentValueSubject<School, Never>(citySchool)
+    
+    let cancellable = school.flatMap {
+        $0.students
+    }
+        .sink {
+            print($0)
+        }
+    
+    let townSchool = School(name: "Town School", students: 23)
+    school.value = townSchool
+    
+    townSchool.students.value += 1
+    
+    cancellable.cancel()
+}
