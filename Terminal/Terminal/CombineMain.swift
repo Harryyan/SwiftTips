@@ -29,5 +29,6 @@ struct CombineMain {
         
         // Operator tests
         flatMapTest()
+        replaceEmptyTest()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 struct School {
     let name: String
@@ -29,10 +30,73 @@ func flatMapTest() {
             print($0)
         }
     
-    let townSchool = School(name: "Town School", students: 23)
+    let townSchool = School(name: "Town School", students: 20)
     school.value = townSchool
     
     townSchool.students.value += 1
     
     cancellable.cancel()
+}
+
+/// collect
+/// group elements and print
+func collectTest() {
+    let _ = [1,2,3,4].publisher.collect(2).sink {
+        print($0)
+    }
+}
+
+/// map
+func mapTest() {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .spellOut
+    
+    let _ =  [1,2,3].publisher.map {
+        formatter.string(from: NSNumber(value: $0)) ?? ""
+    }.sink {
+        print($0)
+    }
+}
+
+
+/// map keypath
+struct Point {
+    let x: Int
+    let y: Int
+}
+
+func keypathMapTest() {
+    let publisher = PassthroughSubject<Point, Never>()
+    
+    let _ = publisher.map(\.x, \.y).sink {
+        print("x is \($0), y is \($1)")
+    }
+}
+
+/// replace nil
+func replaceNilTest() {
+    let _ =  [1,2,3,nil].publisher.replaceNil(with: 5)
+        .map { $0! }
+        .sink {
+            print($0)
+        }
+}
+
+/// replace empty
+func replaceEmptyTest() {
+    // init purpose
+    let empty = Empty<Int, Never>()
+    let _ = empty.replaceEmpty(with: 5).sink(receiveCompletion: { print($0)}, receiveValue: { print($0) } )
+}
+
+/// Scan
+func scanTest() {
+    let publisher = (1...10).publisher
+    
+    publisher.scan([]) { results, value in
+        results + [value]
+    }
+    .sink {
+        print($0)
+    }
 }
