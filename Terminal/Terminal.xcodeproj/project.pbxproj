@@ -13,6 +13,7 @@
 		123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */; };
 		123EB85426F2E94F00FD5DFA /* StringSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */; };
 		123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85226F2E94F00FD5DFA /* CombineMain.swift */; };
+		1288171926F47CB70081F694 /* CombineOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288171826F47CB70081F694 /* CombineOperators.swift */; };
 		12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B102C826C706E7000106F5 /* CoreDataStack.swift */; };
 		12B35BD426C3930000495EE3 /* myMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BD326C3930000495EE3 /* myMain.swift */; };
 		12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BDA26C394BE00495EE3 /* HashCache.swift */; };
@@ -43,6 +44,7 @@
 		123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPublisher.swift; sourceTree = "<group>"; };
 		123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSubscriber.swift; sourceTree = "<group>"; };
 		123EB85226F2E94F00FD5DFA /* CombineMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMain.swift; sourceTree = "<group>"; };
+		1288171826F47CB70081F694 /* CombineOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineOperators.swift; sourceTree = "<group>"; };
 		12B102C826C706E7000106F5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		12B35BD026C3930000495EE3 /* Terminal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Terminal; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B35BD326C3930000495EE3 /* myMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMain.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				123EB85226F2E94F00FD5DFA /* CombineMain.swift */,
+				1288171826F47CB70081F694 /* CombineOperators.swift */,
 				123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */,
 				123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */,
 				12B35BD326C3930000495EE3 /* myMain.swift */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */,
+				1288171926F47CB70081F694 /* CombineOperators.swift in Sources */,
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
 				123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
