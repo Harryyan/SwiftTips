@@ -8,6 +8,23 @@
 import Combine
 import Foundation
 
+/// collect
+/// map
+/// flatmap
+/// keypath
+/// replace nil
+/// replace emptys
+/// scan
+/// filter
+/// removeDuplicates
+/// compactmap
+/// ignore output
+/// first / last
+/// drop first
+/// drop while
+/// drop unit output from
+/// prefix
+
 struct School {
     let name: String
     let students: CurrentValueSubject<Int, Never>
@@ -100,3 +117,35 @@ func scanTest() {
         print($0)
     }
 }
+
+
+/// filter
+func filterTest() {
+    let numbers = (1...20).publisher
+    
+    numbers.filter { $0 % 2 == 0 }
+    .sink {
+        print($0)
+    }
+}
+
+/// remove duplicates
+/// only remove next duplicated words, not all of them
+func removeDuplicates() {
+    let words = "apple apple fruit apple mango watermelon apple".components(separatedBy: " ").publisher
+    words
+        .removeDuplicates()
+        .sink {
+            print($0)
+        }
+}
+
+/// compact map
+/// help to remove nil values
+func compactmapTest() {
+    let strings = ["a", "1.24", "b", "3.45", "5.66"].publisher.compactMap { Float($0) }.sink {
+        print($0)
+    }
+}
+
+/// ignore output

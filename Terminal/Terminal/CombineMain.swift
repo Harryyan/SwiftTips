@@ -28,7 +28,6 @@ struct CombineMain {
         subject.send("test2")
         
         // Operator tests
-        flatMapTest()
-        replaceEmptyTest()
+        compactmapTest()
     }
 }
