@@ -7,6 +7,9 @@
 
 import Combine
 import Foundation
+import SwiftUI
+
+/// Filtering operators
 
 /// collect
 /// map
@@ -221,4 +224,115 @@ func prefixTest() {
     numbers.prefix(while: { $0 < 3 }).sink {
         print($0)
     }
+}
+
+/// Combining Operators
+
+/// prepend & append
+func prependTest() {
+    let numbers = (1...5).publisher
+    let numbers2 = (500...510).publisher
+    
+    numbers.prepend(200,202,203).prepend([24]).prepend(numbers2).sink {
+        print($0)
+    }
+}
+
+/// append
+func appendTest() {
+    let numbers = (1...5).publisher
+    let numbers2 = (500...510).publisher
+    
+    numbers.append(9,10).append(numbers2).sink {
+        print($0)
+    }
+}
+
+/// Switch to latest
+/// only publisers which emit publishers can use it
+func switchToLatestTest() {
+    var index = 0
+    let images = ["houston", "denver", "seattle"]
+    
+    func getImage() -> AnyPublisher<Image?, Never>{
+        return Future<Image, Never> { promise in
+            DispatchQueue.global().asyncAfter(deadline: .now()+3.0) {
+                promise(.success(Image(nsImage: NSImage(imageLiteralResourceName: images[index]))))
+            }
+        }
+        .print()
+        .map { $0 }
+        .receive(on: RunLoop.main)
+        .eraseToAnyPublisher()
+    }
+    
+
+    let taps = PassthroughSubject<Void, Never>()
+    
+    taps.map { _ in getImage()}.switchToLatest().sink {
+        print($0)
+    }
+    
+    taps.send()
+    
+    // this one won't print
+    DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+        index += 1
+        taps.send()
+    }
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
+        index += 1
+        taps.send()
+    }
+}
+
+
+/// Merge
+func mergeTest() {
+    let publisher1 = PassthroughSubject<Int, Never>()
+    let publisher2 = PassthroughSubject<Int, Never>()
+    
+    publisher1.merge(with: publisher2).sink {
+        print($0)
+    }
+    
+    publisher1.send(1)
+    publisher1.send(2)
+    
+    publisher2.send(3)
+    publisher2.send(4)
+    
+}
+
+
+/// combine latest
+func combineLastestTest() {
+    let publisher1 = PassthroughSubject<Int, Never>()
+    let publisher2 = PassthroughSubject<Int, Never>()
+    
+    let cancellable = publisher1.combineLatest(publisher2).sink {
+        print("P1: \($0.0) and P2: \($0.1)")
+    }
+    
+    publisher1.send(3)
+    publisher2.send(5)
+    
+    publisher1.send(5)
+}
+
+/// zip
+func zipTest() {
+    let publisher1 = PassthroughSubject<Int, Never>()
+    let publisher2 = PassthroughSubject<String, Never>()
+    
+    let cancellable = publisher1.zip(publisher2).sink {
+        print("P1: \($0.0) and P2: \($0.1)")
+    }
+    
+    publisher1.send(3)
+    publisher2.send("a")
+    
+    publisher1.send(5)
+    publisher2.send("b")
 }
