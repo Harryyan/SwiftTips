@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-/// Filtering operators
+// MARK: - Filtering operators
 
 /// collect
 /// map
@@ -226,7 +226,7 @@ func prefixTest() {
     }
 }
 
-/// Combining Operators
+// MARK: - Combining Operators
 
 /// prepend & append
 func prependTest() {
@@ -285,6 +285,14 @@ func switchToLatestTest() {
         index += 1
         taps.send()
     }
+    
+    // search debouncing
+    taps.debounce(for: 0.5, scheduler: DispatchQueue.main)
+        .map {
+            getImage()
+        }
+        .switchToLatest()
+        .receive(on: DispatchQueue.main)
 }
 
 
@@ -335,4 +343,86 @@ func zipTest() {
     
     publisher1.send(5)
     publisher2.send("b")
+}
+
+// MARK: - Sequence Operators
+
+/// min
+/// max
+/// count
+/// contains
+/// allSatisfy
+/// reduce
+
+/// min & max
+func minMaxTest() {
+    let numbers = [1,2,-3,4,5].publisher
+    
+    numbers.min().sink {
+        print($0)
+    }
+    
+    numbers.max().sink {
+        print($0)
+    }
+}
+
+/// output at index
+func outputTest() {
+    let publisher = ["a", "b", "c", "d", "e"].publisher
+    
+    publisher.output(at: 2).sink {
+        print($0)
+    }
+    
+    publisher.output(in: (0...2)).sink {
+        print($0)
+    }
+}
+
+/// count
+func countTest() {
+    let publisher = ["a", "b", "c", "d", "e"].publisher
+    let publisher1 = PassthroughSubject<Int, Never>()
+    
+    publisher.count().sink {
+        print($0)
+    }
+    
+    publisher1.sink {
+        print($0)
+    }
+    
+    publisher1.send(3)
+    publisher1.send(completion: .finished)
+}
+
+/// contains
+func containsTest() {
+    let publisher = ["a", "b", "c", "d", "e"].publisher
+    
+    publisher.contains("C").sink {
+        print($0)
+    }
+}
+
+/// All Satisfy
+func allSatisfy() {
+    let numbers = [1,2,3,4,5,6,7].publisher
+    
+    numbers.allSatisfy { $0 > 0 }.sink {
+        print($0)
+    }
+}
+
+/// reduce
+func reduceTest() {
+    let numbers = [1,2,3,4,5,6,7].publisher
+    
+    numbers.print().reduce(0) { result, value in
+        result + value
+    }
+    .sink {
+        print($0)
+    }
 }

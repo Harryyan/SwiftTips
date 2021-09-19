@@ -28,6 +28,6 @@ struct CombineMain {
         subject.send("test2")
         
         // Operator tests
-        zipTest()
+        reduceTest()
     }
 }
