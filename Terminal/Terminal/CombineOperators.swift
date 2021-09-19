@@ -149,3 +149,76 @@ func compactmapTest() {
 }
 
 /// ignore output
+func ignoreOutputTest() {
+    let numbers = (1...5000).publisher
+    
+    numbers.ignoreOutput().sink(receiveCompletion: {print($0)}, receiveValue: {print($0)})
+}
+
+/// First / last
+func testFirstandLast() {
+    let numbers = (1...9).publisher
+    
+    numbers.first(where: { $0 % 2 == 0})
+        .sink {
+            print($0)
+        }
+    
+    numbers.last(where: { $0 % 2 == 0})
+        .sink {
+            print($0)
+        }
+}
+
+/// Drop first
+func dropFirstTest() {
+    let numbers = (1...10).publisher
+    
+    numbers.dropFirst(5).sink {
+        print($0)
+    }
+}
+
+/// Drop while
+/// drop elements until one meets the requirements
+func droWhileTest() {
+    let numbers = (1...10).publisher
+    
+    numbers.drop(while: {$0 % 3 != 0})
+        .sink {
+            print($0)
+        }
+}
+
+/// drop until
+func dropUntilTest() {
+    let ready = PassthroughSubject<Void, Never>()
+    let taps = PassthroughSubject<Int, Never>()
+    
+    let a = taps.drop(untilOutputFrom: ready)
+        .sink {
+            print($0)
+        }
+    
+    (1...10).forEach { n in
+        taps.send(n)
+        
+        if n == 3 {
+            ready.send()
+        }
+    }
+}
+
+
+/// Prefix
+func prefixTest() {
+    let numbers = (1...10).publisher
+    
+    numbers.prefix(2).sink {
+        print($0)
+    }
+    
+    numbers.prefix(while: { $0 < 3 }).sink {
+        print($0)
+    }
+}
