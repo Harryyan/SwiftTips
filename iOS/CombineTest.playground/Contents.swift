@@ -27,3 +27,30 @@ func getPosts() -> AnyPublisher<[Post], Error> {
 let cancellable = getPosts().sink(receiveCompletion: {_ in }, receiveValue: {
     print($0)
 })
+
+/// Create timers
+/// #1 - Runloop scheduler
+let runloop = RunLoop.main
+let cancelable = runloop.schedule(after: runloop.now, interval: .seconds(2), tolerance: .microseconds(100)) {
+    print("Timer Fired!")
+}
+
+/// #2 - Timer
+let subscriber = Timer.publish(every: 1.0, on: .current, in: .common).autoconnect().sink {
+    print($0)
+}
+
+
+/// #3
+/// DispatchQueue
+
+let publisher = PassthroughSubject<Int, Never>()
+var count = 0
+let cancelable1 = DispatchQueue.main.schedule(after: DispatchQueue.main.now, interval: .seconds(1)) {
+    publisher.send(count)
+    count += 1
+}
+
+let cancelable2 = publisher.sink {
+    print($0)
+}
