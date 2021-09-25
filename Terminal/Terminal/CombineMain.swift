@@ -15,15 +15,13 @@ struct CombineMain {
         let subscriber1 = StringSubscriber2()
         
         publisher.subscribe(subscriber)
-        
-        
+
         // Subjects - special publiser
         
         print("Subscriber 1")
         
         let subject = PassthroughSubject<String, MyError>()
         subject.subscribe(subscriber1)
-        
         subject.send("test")
         subject.send("test2")
         
