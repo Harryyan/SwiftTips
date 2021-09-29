@@ -7,9 +7,9 @@
 
 import Combine
 
-@main
+//@main
 struct CombineMain {
-    static func main() async throws {
+    static func main() {
         let publisher = ["1", "2", "3", "4", "5"].publisher
         let subscriber = StringSubscriber()
         let subscriber1 = StringSubscriber2()
