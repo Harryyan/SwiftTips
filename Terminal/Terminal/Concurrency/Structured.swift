@@ -26,3 +26,9 @@ func fetchData(at index: Int) async throws {
     
     print("\(Thread.current)" + ": \(index)" + ": After")
 }
+
+
+/// async let await
+func fetchDataAsyncLetTest() async throws {
+    
+}
