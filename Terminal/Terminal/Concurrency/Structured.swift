@@ -12,7 +12,24 @@ enum DataError: Error {
     case urlInvalid
 }
 
-func fetchData(at index: Int) async throws {
+func fetchData(_ index: Int) async throws {
+    
+    func sameThread() async {
+        var a = 0
+        
+        for i in 1...1000 {
+            a = 500 * i
+        }
+        
+        print("\(Thread.current)"  + ": Test")
+    }
+
+    func differentThread(url: URL) async throws {
+        let (data, response) =  try await URLSession.shared.data(from: url)
+        
+        print("\(Thread.current)"  + ": URLSession")
+    }
+    
     print("\(Thread.current)" + ": \(index)" + ": Before")
     
     let url = URL(string: "https://my-json-server.typicode.com/typicode/demo/posts")
@@ -21,10 +38,11 @@ func fetchData(at index: Int) async throws {
         throw DataError.urlInvalid
     }
     
-    /// Ignore compiling error here, Xcode 13 tool chain not support very well
-    let (data, response) = try await URLSession.shared.data(from: url)
     
-    print("\(Thread.current)" + ": \(index)" + ": After")
+    await sameThread()
+    try await differentThread(url: url)
+    
+    print("\(Thread.current)" + ": After")
 }
 
 
