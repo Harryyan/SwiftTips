@@ -12,17 +12,18 @@ enum DataError: Error {
     case urlInvalid
 }
 
-func fetchData(_ index: Int) async throws {
+func customAsync() async {
+    var a = 0
     
-    func sameThread() async {
-        var a = 0
-        
-        for i in 1...1000 {
-            a = 500 * i
-        }
-        
-        print("\(Thread.current)"  + ": Test")
+    for i in 1...1000 {
+        a = 500 * i
     }
+    
+    print("\(Thread.current)"  + ": Test")
+}
+
+
+func fetchData(_ index: Int) async throws {
 
     func differentThread(url: URL) async throws {
         let (data, response) =  try await URLSession.shared.data(from: url)
@@ -39,7 +40,7 @@ func fetchData(_ index: Int) async throws {
     }
     
     
-    await sameThread()
+    await customAsync()
     try await differentThread(url: url)
     
     print("\(Thread.current)" + ": After")
@@ -48,5 +49,21 @@ func fetchData(_ index: Int) async throws {
 
 /// async let await
 func fetchDataAsyncLetTest() async throws {
+    print("\(Thread.current)" + ": \(index)" + ": Before")
     
+    let url = URL(string: "https://my-json-server.typicode.com/typicode/demo/posts")
+    
+    guard let url = url else {
+        throw DataError.urlInvalid
+    }
+    
+    async let test1 = try await customAsync()
+    async let test2 = try await customAsync()
+    async let test3 = try await customAsync()
+    
+    print("Test: " + "\(index)")
+    
+    let _ = try await [test1, test2, test3]
+    
+    print("\(Thread.current)" + ": \(index)" + ": After")
 }
