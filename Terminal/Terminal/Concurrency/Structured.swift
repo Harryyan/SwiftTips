@@ -67,3 +67,35 @@ func fetchDataAsyncLetTest() async throws {
     
     print("\(Thread.current)" + ": \(index)" + ": After")
 }
+
+func fetchDataWithTaskGroup() {
+    func sameThread(_ index: Int) async -> Int {
+        var a = 0
+        
+        for i in 1...1000 {
+            a = 500 * i
+        }
+        
+        print("\(Thread.current)"  + ": Same Thread \(index)")
+        
+        return a
+    }
+
+    
+    print("\(Thread.current)" + ": \(index)" + ": Before")
+    
+    try? await withThrowingTaskGroup(of: Int.self, body: { group in
+        for i in 1...5 {
+            group.addTask {
+                /// sendable closure
+                /// can't capture mutable variables
+                return await sameThread(i)
+            }
+        }
+
+        /// won't wait for all group finish, will run when some of them finish
+        for try await value in group {
+            print(value)
+        }
+    })
+}
