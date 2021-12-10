@@ -7,17 +7,17 @@
 
 import Foundation
 
-@main
+//@main
 struct ConcurrencyMain {
     
     static func main() {
         let items = [1,2,3,4,5]
         
         /// Ignore compiling issues
-        Task {
-            for i in items {
-                try? await fetchData(at: i)
-            }
-        }
+//        Task {
+//            for i in items {
+//                try? await fetchData(at: i)
+//            }
+//        }
     }
 }

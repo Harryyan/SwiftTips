@@ -84,18 +84,18 @@ func fetchDataWithTaskGroup() {
     
     print("\(Thread.current)" + ": \(index)" + ": Before")
     
-    try? await withThrowingTaskGroup(of: Int.self, body: { group in
-        for i in 1...5 {
-            group.addTask {
-                /// sendable closure
-                /// can't capture mutable variables
-                return await sameThread(i)
-            }
-        }
-
-        /// won't wait for all group finish, will run when some of them finish
-        for try await value in group {
-            print(value)
-        }
-    })
+//    try? await withThrowingTaskGroup(of: Int.self, body: { group in
+//        for i in 1...5 {
+//            group.addTask {
+//                /// sendable closure
+//                /// can't capture mutable variables
+//                return await sameThread(i)
+//            }
+//        }
+//
+//        /// won't wait for all group finish, will run when some of them finish
+//        for try await value in group {
+//            print(value)
+//        }
+//    })
 }
