@@ -43,6 +43,7 @@ final class Bar: ObservableObject {
   }
 }
 
+
 final class Bar1: ObservableObject {
     var input: String = "" {
         didSet {
@@ -62,9 +63,11 @@ final class Bar1: ObservableObject {
     }
 }
 
+struct Test1 {
+    
+}
 
-
-@main
+//@main
 struct CombineMain {
     static func main() {
 //        let publisher = ["1", "2", "3", "4", "5"].publisher
@@ -98,5 +101,7 @@ struct CombineMain {
         let foo = bar?.$output.sink { print($0) }
         bar?.input = "Hello"
         bar = nil
+        
+        print(Test1.self)
     }
 }

@@ -10,9 +10,11 @@
 		122B85B626C65FA600F6D8F2 /* BufferAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B85B526C65FA600F6D8F2 /* BufferAsync.swift */; };
 		122E193826DA2EB30022EEE3 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193726DA2EB30022EEE3 /* Animation.swift */; };
 		122E193A26DA2EBE0022EEE3 /* AnimationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E193926DA2EBE0022EEE3 /* AnimationUI.swift */; };
+		1236229E27CB4BCE009D8AA1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236229D27CB4BCE009D8AA1 /* Account.swift */; };
 		123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */; };
 		123EB85426F2E94F00FD5DFA /* StringSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */; };
 		123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123EB85226F2E94F00FD5DFA /* CombineMain.swift */; };
+		125D4C5727E01B420073DB3C /* ActorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4C5627E01B420073DB3C /* ActorTest.swift */; };
 		12707C9A2703C21D004F80B2 /* Structured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12707C992703C21D004F80B2 /* Structured.swift */; };
 		12707C9C2703CAD6004F80B2 /* ConcurrencyMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12707C9B2703CAD6004F80B2 /* ConcurrencyMain.swift */; };
 		1288171926F47CB70081F694 /* CombineOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288171826F47CB70081F694 /* CombineOperators.swift */; };
@@ -43,9 +45,11 @@
 		122B85B526C65FA600F6D8F2 /* BufferAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferAsync.swift; sourceTree = "<group>"; };
 		122E193726DA2EB30022EEE3 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		122E193926DA2EBE0022EEE3 /* AnimationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUI.swift; sourceTree = "<group>"; };
+		1236229D27CB4BCE009D8AA1 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		123EB85026F2E94F00FD5DFA /* CustomPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPublisher.swift; sourceTree = "<group>"; };
 		123EB85126F2E94F00FD5DFA /* StringSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSubscriber.swift; sourceTree = "<group>"; };
 		123EB85226F2E94F00FD5DFA /* CombineMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMain.swift; sourceTree = "<group>"; };
+		125D4C5627E01B420073DB3C /* ActorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorTest.swift; sourceTree = "<group>"; };
 		12707C992703C21D004F80B2 /* Structured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structured.swift; sourceTree = "<group>"; };
 		12707C9B2703CAD6004F80B2 /* ConcurrencyMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyMain.swift; sourceTree = "<group>"; };
 		1288171826F47CB70081F694 /* CombineOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineOperators.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			children = (
 				12707C9B2703CAD6004F80B2 /* ConcurrencyMain.swift */,
 				12707C992703C21D004F80B2 /* Structured.swift */,
+				1236229D27CB4BCE009D8AA1 /* Account.swift */,
+				125D4C5627E01B420073DB3C /* ActorTest.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				12707C9C2703CAD6004F80B2 /* ConcurrencyMain.swift in Sources */,
 				1288171926F47CB70081F694 /* CombineOperators.swift in Sources */,
 				12707C9A2703C21D004F80B2 /* Structured.swift in Sources */,
+				125D4C5727E01B420073DB3C /* ActorTest.swift in Sources */,
 				12B102C926C706E7000106F5 /* CoreDataStack.swift in Sources */,
 				123EB85326F2E94F00FD5DFA /* CustomPublisher.swift in Sources */,
 				12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */,
@@ -227,6 +234,7 @@
 				122E193826DA2EB30022EEE3 /* Animation.swift in Sources */,
 				12B35BD426C3930000495EE3 /* myMain.swift in Sources */,
 				123EB85426F2E94F00FD5DFA /* StringSubscriber.swift in Sources */,
+				1236229E27CB4BCE009D8AA1 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

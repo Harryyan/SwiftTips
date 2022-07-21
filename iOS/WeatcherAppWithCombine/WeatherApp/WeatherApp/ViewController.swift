@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     private func setupPublishers() {
         
     let publisher = NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self.cityTextField)
-        
+    
     self.cancellable = publisher.compactMap {
             ($0.object as! UITextField).text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         }.debounce(for: .milliseconds(500), scheduler: RunLoop.main)

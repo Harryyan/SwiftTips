@@ -19,7 +19,7 @@ func customAsync() async {
         a = 500 * i
     }
     
-    print("\(Thread.current)"  + ": Test")
+//    print("CustomAsync happens on [\(Thread.current)]"")
 }
 
 
