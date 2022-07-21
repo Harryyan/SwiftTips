@@ -80,7 +80,6 @@ actor HashCacheActor {
             // print("***")
         }
         //
-        //        print(hashes)
         
         //        HashCache.test {
         //            await self.addHash(for: 22)
