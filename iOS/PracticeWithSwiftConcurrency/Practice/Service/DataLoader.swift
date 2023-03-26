@@ -26,3 +26,4 @@ struct DataLoader: Loadable {
         return result.products
     }
 }
+

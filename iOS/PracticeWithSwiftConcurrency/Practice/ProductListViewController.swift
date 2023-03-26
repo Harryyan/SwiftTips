@@ -23,6 +23,7 @@ final class ProductListViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         viewModel.loadData()
+        
     }
     
     private func setUpSubscription() {
