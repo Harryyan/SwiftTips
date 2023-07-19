@@ -31,17 +31,70 @@ actor ProductsBuffer {
     }
 }
 
+@propertyWrapper public struct ThreadSafe<T: Sendable> {
+    private var _value: T
+    private let lock = NSLock()
+    private let queue: DispatchQueue
+
+    public var wrappedValue: T {
+        get {
+            queue.sync { _value }
+        }
+        
+        _modify {
+            lock.lock()
+            var tmp: T = _value
+
+            defer {
+                _value = tmp
+                lock.unlock()
+            }
+
+            yield &tmp
+        }
+    }
+
+    public init(wrappedValue: T, queue: DispatchQueue? = nil) {
+        self._value = wrappedValue
+        self.queue = queue ?? DispatchQueue(label: "com.test")
+    }
+}
+
+struct Entity: Hashable {
+    let id: Int
+    let name: String
+}
+
+struct Container: Sendable {
+    @ThreadSafe
+    static var openChatRooms = Set<Entity>()
+}
+
 @main
 struct Main {
     static func main() async {
-        let buffer = ProductsBuffer(size: 1000)
+        Task {
+            await test1()
+        }
         
-        await withTaskGroup(of: Void.self, body: { group in
+        Task {
             for i in 0..<1000 {
-                await buffer.push(i)
-                await buffer.pop()
+                Container.openChatRooms.insert(Entity(id:i,name: "Room: \(i)"))
+                print(i)
             }
-        })
+        }
+        
+        
+        try? await Task.sleep(nanoseconds: 30_000_000_000)
+    }
+    
+    static func test1() async {
+        Task {
+            for i in 0..<1000 {
+                Container.openChatRooms.insert(Entity(id:i,name: "Room: \(i)"))
+                print(i)
+            }
+        }
     }
 }
 
