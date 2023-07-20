@@ -23,6 +23,7 @@
 		12B35BDB26C394BE00495EE3 /* HashCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B35BDA26C394BE00495EE3 /* HashCache.swift */; };
 		12F2812526E5DEF9002FD1AC /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2812426E5DEF9002FD1AC /* Future.swift */; };
 		6D26F27B29D0287D00289C5E /* OS_SignPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D26F27A29D0287D00289C5E /* OS_SignPost.swift */; };
+		6DECB5C72A6897FB000450AF /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECB5C62A6897FB000450AF /* ThreadSafe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		12B35BDA26C394BE00495EE3 /* HashCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashCache.swift; sourceTree = "<group>"; };
 		12F2812426E5DEF9002FD1AC /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		6D26F27A29D0287D00289C5E /* OS_SignPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OS_SignPost.swift; sourceTree = "<group>"; };
+		6DECB5C62A6897FB000450AF /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		12707C982703C1E8004F80B2 /* Concurrency */ = {
 			isa = PBXGroup;
 			children = (
+				6DECB5C62A6897FB000450AF /* ThreadSafe.swift */,
 				12707C9B2703CAD6004F80B2 /* ConcurrencyMain.swift */,
 				12707C992703C21D004F80B2 /* Structured.swift */,
 				1236229D27CB4BCE009D8AA1 /* Account.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DECB5C72A6897FB000450AF /* ThreadSafe.swift in Sources */,
 				123EB85526F2E94F00FD5DFA /* CombineMain.swift in Sources */,
 				12707C9C2703CAD6004F80B2 /* ConcurrencyMain.swift in Sources */,
 				1288171926F47CB70081F694 /* CombineOperators.swift in Sources */,
@@ -372,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -381,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
