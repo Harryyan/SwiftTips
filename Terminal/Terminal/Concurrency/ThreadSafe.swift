@@ -1,9 +1,8 @@
 import Foundation
 
-@propertyWrapper public struct ThreadSafeByQueue<T: Sendable>: Sendable {
+@propertyWrapper public struct ThreadSafe<T: Sendable>: Sendable {
     private var _value: T
     private let lock = NSLock()
-//    private let queue: DispatchQueue
 
     public var wrappedValue: T {
         get {
@@ -27,7 +26,37 @@ import Foundation
 
     public init(wrappedValue: T) {
         self._value = wrappedValue
-//        self.queue = queue ?? DispatchQueue(label: "com.test.queue")
+    }
+}
+
+@propertyWrapper public struct ThreadSafe2<T: Sendable> {
+    private var _value: T
+    private let lock = NSLock()
+    private let queue: DispatchQueue
+
+    public var wrappedValue: T {
+        get {
+            queue.sync {
+                _value
+            }
+        }
+        
+        _modify {
+            lock.lock()
+            var tmp: T = _value
+
+            defer {
+                _value = tmp
+                lock.unlock()
+            }
+
+            yield &tmp
+        }
+    }
+
+    public init(wrappedValue: T, queue: DispatchQueue? = nil) {
+        self._value = wrappedValue
+        self.queue = queue ?? DispatchQueue(label: "com.test.queue")
     }
 }
 
@@ -41,7 +70,7 @@ struct Entity: Hashable {
 }
 
 struct Container: Sendable {
-    @ThreadSafeByQueue
+    @ThreadSafe
     static var openChatRooms = Set<Entity>()
 }
 
