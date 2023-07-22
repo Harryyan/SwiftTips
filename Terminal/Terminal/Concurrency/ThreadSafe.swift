@@ -1,9 +1,61 @@
 import Foundation
+import os
 
-@propertyWrapper public struct ThreadSafe<T: Sendable>: Sendable {
+// MARK: - Semaphore
+@propertyWrapper
+struct AtomicSemaphore<Value> {
+    private var value: Value
+    private var semaphore = DispatchSemaphore(value: 1)
+
+    var wrappedValue: Value {
+        get {
+            semaphore.wait()
+            let temp = value
+            semaphore.signal()
+            return temp
+        }
+
+        _modify {
+            semaphore.wait()
+            var tmp: Value = value
+            
+            defer {
+                value = tmp
+                semaphore.signal()
+            }
+            
+            yield &tmp
+        }
+    }
+
+    init(wrappedValue value: Value) {
+        self.value = value
+    }
+}
+
+// MARK: - DispatchQueue
+
+@propertyWrapper
+class AtomicDispatchQueue<Value: Sendable> {
+    private var value: Value
+    private let queue = DispatchQueue(label: "com.test.readerwriter", attributes: .concurrent)
+
+    var wrappedValue: Value {
+        get { queue.sync { value } }
+        set { queue.async(flags: .barrier) { self.value = newValue } }
+    }
+
+    init(wrappedValue value: Value) {
+        self.value = value
+    }
+}
+
+// MARK: - NSLock
+
+@propertyWrapper public struct AtomicNSLock<T: Sendable>: Sendable {
     private var _value: T
     private let lock = NSLock()
-
+    
     public var wrappedValue: T {
         get {
             lock.withLock {
@@ -14,96 +66,73 @@ import Foundation
         _modify {
             lock.lock()
             var tmp: T = _value
-
+            
             defer {
                 _value = tmp
                 lock.unlock()
             }
-
+            
             yield &tmp
         }
     }
-
+    
     public init(wrappedValue: T) {
         self._value = wrappedValue
     }
 }
 
-@propertyWrapper public struct ThreadSafe2<T: Sendable> {
-    private var _value: T
-    private let lock = NSLock()
-    private let queue: DispatchQueue
+// MARK: - UnfairLock
 
-    public var wrappedValue: T {
-        get {
-            queue.sync {
-                _value
-            }
-        }
+@propertyWrapper
+final class AtomicUnfairLock<T> {
+    private var _value: T
+    private var lock = OSAllocatedUnfairLock()
+
+    var wrappedValue: T {
+        get { lock.withLock { _value } }
         
         _modify {
             lock.lock()
             var tmp: T = _value
-
+            
             defer {
                 _value = tmp
                 lock.unlock()
             }
-
+            
             yield &tmp
         }
     }
 
-    public init(wrappedValue: T, queue: DispatchQueue? = nil) {
-        self._value = wrappedValue
-        self.queue = queue ?? DispatchQueue(label: "com.test.queue")
+    init(wrappedValue value: T) {
+        _value = value
     }
 }
 
+// MARK: - RecusiveLock
 
+@propertyWrapper
+final class AtomicRecusiveLock<T> {
+    private var _value: T
+    private var lock = NSRecursiveLock()
 
-
-
-struct Entity: Hashable {
-    let id: Int
-    let name: String
-}
-
-struct Container: Sendable {
-    @ThreadSafe
-    static var openChatRooms = Set<Entity>()
-}
-
-@main
-struct Main {
-    static func main() async {
-        await withThrowingTaskGroup(of: Void.self, body: { group in
-            group.addTask {
-                await write()
-            }
-        })
+    var wrappedValue: T {
+        get { lock.withLock { _value } }
         
-        Task {
-            await read()
-        }
-        
-        try? await Task.sleep(nanoseconds: 30_000_000_000)
-    }
-    
-    static func read() async {
-        Task {
-            for _ in 0..<1000 {
-                print("Read")
+        _modify {
+            lock.lock()
+            var tmp: T = _value
+            
+            defer {
+                _value = tmp
+                lock.unlock()
             }
+            
+            yield &tmp
         }
     }
-    
-    static func write() async {
-        Task {
-            for i in 0..<1000 {
-                Container.openChatRooms.insert(Entity(id: i,name: "Room: \(i)"))
-                print("Write")
-            }
-        }
+
+    init(wrappedValue value: T) {
+        _value = value
     }
 }
